@@ -1,0 +1,31 @@
+--create skincare store database.
+CREATE TABLE skincare (sku_id INTEGER PRIMARY KEY, product_name TEXT, variations INTEGER, stock INTEGER, price INTEGER);
+
+INSERT INTO skincare VALUES (1,"Axis-Y",1,23,45);
+INSERT INTO skincare VALUES (2,"Beauty of Joseon",3,44,73);
+INSERT INTO skincare VALUES (3,"LAIKOU",2,100,7);
+INSERT INTO skincare VALUES (4,"MRGREEN",6,200,8.9);
+INSERT INTO skincare VALUES (5,"Florasis",8,100,300);
+INSERT INTO skincare VALUES (6,"Frudia",7,50,30);
+INSERT INTO skincare VALUES (7,"Mediheal",5,100,20);
+INSERT INTO skincare VALUES (8,"MEDI-PEEL",3,500,23.3);
+INSERT INTO skincare VALUES (9,"Clarins",16,60,78);
+INSERT INTO skincare VALUES (10,"Nature Beauty",4,70,88);
+INSERT INTO skincare VALUES (11,"Innisfree",5,67,12);
+INSERT INTO skincare VALUES (12,"SOMEBYMI",5,200,65);
+INSERT INTO skincare VALUES (13,"SEVICH",8,300,4.5);
+INSERT INTO skincare VALUES (14,"SUAKE",10,200,2.6);
+INSERT INTO skincare VALUES (15,"EAORON",9,20,36);
+
+--display the database ordered by price.
+SELECT * FROM skincare;
+SELECT * FROM skincare ORDER BY price;
+
+--what is the total stock of all products?
+SELECT SUM(stock) FROM skincare;
+
+--what is the most expensive product?
+SELECT MAX(price) FROM skincare;
+
+--which product has the most variations?
+SELECT * FROM skincare WHERE variations>5;
